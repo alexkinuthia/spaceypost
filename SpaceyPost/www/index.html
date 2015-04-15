@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaceyPost</title>
+<!--
+    This template can be used for creating apps that require user login and user registration before starting actual app.
+--> 
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>  
+    
+    <script>
+    
+    
+    </script>
+</head>
+<body> 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!-- Views -->
+        
+        <!-- Welcome View -->
+        <div class="panel" title="Welcome" id="page1" data-header="none" data-footer="none" selected="true">
+            <div style="text-align:center">
+            <br>
+            <br>
+            <h1>SpaceyPost</h1>
+            <br>
+            <br>
+            <p>Share Happy Moments with the one closese to you even when in Space! :)</p>
+            <br>
+            <br>
+            </div>    
+            <ul class="list inset">
+                <li><a href="#signin" class="icon user" style="text-align:center">Login</a></li>
+                <li><a href="#signup" class="icon pencil" style="text-align:center">Register</a></li>
+            </ul>
+        </div>
+        
+        <!-- Login View -->
+        <div class="panel" title="Login" id="signin" data-footer="none">
+            <div style="text-align:center">
+            <br>
+            <br>
+            <p>This is space for login message</p>
+            <br>
+            <br>
+            </div>
+            <form action="http://www.smileyslimited.com/nasa/login.php" method="post" >
+            <input name="email" type="text" placeholder="email" />
+            <input name="password" type="password" placeholder="password" />
+            <input class="button block green" href="#" id="login" onclick="submit" type="submit" value="Login" style="width:100%;"/>
+            </form>
+        </div>
+        
+        <!-- Register View -->
+        <div class="panel" title="Register" id="signup" data-footer="none">
+            <div style="text-align:center">
+           
+            <br>
+            <p></p>
+            <br>
+            
+            </div>
+            <form action="http://www.smileyslimited.com/nasa/signup.php" method="post">
+            <input name="fname" type="text" placeholder="First Name" />
+                <input name="lname" type="text" placeholder="Last Name" />
+                <input name="userid" type="text" placeholder="User Name" />
+            <input name="email" type="text" placeholder="Email" />
+            <input name="password" type="password" placeholder="password" />
+            <input name="password2" type="password" placeholder="confirm password" />
+                <input name="city" type="text" placeholder="City" />
+                <input name="state" type="text" placeholder="State" />
+                <input name="country" type="text" placeholder="Country" />
+                <input name="zip" type="text" placeholder="Zip" />
+                <input type="checkbox" name="terms" value="yes"  checked="true" /> I AGREE!
+            <input class="button block green" href="#" id="register" onclick="submit" type="submit" value="Register" style="width:100%"/></form>
+        </div>
+        
+        
+        
+    </div>
+
+</div>
+</body>
+</html>    

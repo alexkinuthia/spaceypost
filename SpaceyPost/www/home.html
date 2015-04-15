@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaceyPost Home</title>
+<!--
+    This template can be used for simple tab view application that has tabs at the bottom to switch views, for applications like Phone app, Facebook App or Instagram app.
+--> 
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>
+<!-- end Intel XDK code -->
+    
+    <script>   
+        $.ui.autoLaunch = false; 
+        $.ui.animateHeaders = false;
+                
+        $(document).ready(function(){
+            $.ui.launch();
+        });
+    </script> 
+     <style>
+/* css for custom list item, modify as needed */        
+#afui #listview .list li {padding:10px 20px 10px 10px}
+.list-image {float:left;width:50px;height:50px}
+.list-text {margin-left:60px;min-height:50px}        
+    </style> 
+</head>
+<body> 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!--Tab View Pages-->
+        <div class="panel" title="Home" id="page1" data-tab="tab1" selected="true">
+            
+            
+            <header>
+                <h1>Received Cards</h1>
+            </header>
+            
+            <ul class="list">
+                <li>
+                    <a href="#item1">
+                        <img class="list-image" src="data/male_user_icon.svg" />
+                        <div class="list-text"><b>username1</b><br>Title.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#item2">
+                        <img class="list-image" src="data/male_user_icon.svg" />
+                        <div class="list-text"><b>username2</b><br>Title.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#item3">
+                        <img class="list-image" src="data/female_user_icon.svg" />
+                        <div class="list-text"><b>username3</b><br>Title.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#item4">
+                        <img class="list-image" src="data/male_user_icon.svg" />
+                        <div class="list-text"><b>username4</b><br>Title.</div>
+                    </a>
+                </li>                
+            </ul>
+            
+             <!--Detail View Pages for each list items-->
+        <div class="panel" title="Item 1" id="item1" data-footer="none">
+            <p>Title</p>
+            <p>Image</p>
+            <p>Content</p>
+        </div>
+        
+        <div class="panel" title="Item 2" id="item2" data-footer="none">
+            <p>Title</p>
+            <p>Image</p>
+            <p>Content</p>
+        </div>
+        
+        <div class="panel" title="Item 3" id="item3" data-footer="none">
+            <p>Title</p>
+            <p>Image</p>
+            <p>Content</p>
+        </div>
+        
+        <div class="panel" title="Item 4" id="item4" data-footer="none">
+            <p>Title</p>
+            <p>Image</p>
+            <p>Content</p>
+        </div>
+            
+        </div>
+        
+      
+        
+        <div class="panel" title="New Card" id="page3" data-tab="tab2">
+            <header>
+                <h1>New Card</h1>
+            </header>
+            
+            <form action="" method="post">
+            <input name="name" type="text" placeholder="TO:" /> 
+            <input name="name" type="text" placeholder="Title" />
+            <input type="file" value="select image"/><br>
+            <input name="name" type="text" placeholder="Content" />
+            <input class="button block green" href="#" id="register" onclick="submit" type="submit" value="Send" style="width:100%"/></form>
+        </div>
+        
+        
+        
+        
+        <div class="panel" title="Profile" id="page4" data-tab="tab3">
+            <header>
+                <h1>Profile</h1>
+            </header>
+            
+            
+            <ul class="list">
+                <li>
+                    <a href="#itemP1">
+                        <img class="list-image" src="data/male_user_icon.svg" /><img                                    class="list-image" src="data/female_user_icon.svg" />
+                        <div class="list-text"><br>Change Profile Picture</div>
+                    </a>
+                </li>
+               <li>
+                    <a href="#itemP2">
+                        
+                        <div class="list-text"><b></b><br>Change Password</div>
+                    </a>
+                </li>
+                              
+            </ul>
+            </div>
+             <!--Detail View Pages for each list items-->
+        <br>
+        <br>
+        <div class="panel" title="Profile Image" id="itemP1" data-footer="none">
+            <form action="" method="post">
+            <input type="file" value="select image"/>
+            <input class="button block green" href="#" id="register" onclick="submit"                       type="submit" value="Upload" style="width:100%"/></form>
+        </div>
+        
+        <div class="panel" title="Password" id="itemP2" data-footer="none">
+            <form action="http://www.smileyslimited.com/nasa/changepassword.php" method="post">
+            <input name="password" type="password" placeholder="New Password" />
+            
+            <input name="password2" type="password" placeholder="Re-type Password" />
+            <input class="button block green" href="#" id="register" onclick="submit" type="submit"     value="Update" style="width:100%"/>
+            </form>
+        </div>
+        
+        
+        
+        
+       
+        
+    </div>
+    
+    <!--Footer with Tabs or Navigation bar -->
+    <div id="navbar">
+        <a href="#page1" id='tab1' class="icon home" data-transition="none">Received Cards</a>
+        <a href="#page3" id='tab2' class="icon chat" data-transition="none">New Card</a>
+        <a href="#page4" id='tab3' class="icon user" data-transition="none">Profile</a>
+    </div>
+
+</div>
+</body>
+</html>    

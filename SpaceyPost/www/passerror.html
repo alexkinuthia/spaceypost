@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Error!</title>
+<!--
+    This template can be used for creating apps that require user login and user registration before starting actual app.
+--> 
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>  
+    
+    <script>
+    
+    
+    </script>
+</head>
+<body> 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!-- Views -->
+        
+     
+        
+        <!-- Login View -->
+        <div class="panel" title="Password" id="signin" data-footer="none">
+            <div style="text-align:center">
+            <br>
+            <br>
+            
+            <br>
+            <br>
+            </div>
+            <form action="#" method="get" >
+            <input name="password" type="password" placeholder="password" />
+            <input name="password2" type="password" placeholder="re-type password" />
+            <div style="text-align:center; color:red;">
+            
+           
+            <p>PASSWORD DO NOT MATCH!</p>
+            
+            
+            </div>
+
+            <input class="button block green" href="#" id="login" onclick="submit" type="submit" value="Update" style="width:100%;"/>
+            </form>
+        </div>
+   
+</body>
+</html>    

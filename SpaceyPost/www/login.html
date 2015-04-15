@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaceyPost</title>
+<!--
+    This template can be used for creating apps that require user login and user registration before starting actual app.
+--> 
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>  
+    
+    <script>
+    
+    
+    </script>
+</head>
+<body> 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!-- Views -->
+        
+        <!-- Welcome View -->
+        <div class="panel" title="Welcome" id="page1" data-header="none" data-footer="none" selected="true">
+            <div style="text-align:center">
+            <br>
+            <br>
+            <h1>SpaceyPost</h1>
+            <br>
+            <br>
+            <p>Share Happy Moments with the one closese to you even when in Space! :)</p>
+            <br>
+            <br>
+        
+            <br>
+            <br>
+            
+            <br>
+            <br>
+            
+            <form action="http://www.smileyslimited.com/nasa/login.php" method="post" >
+            <input name="email" type="text" placeholder="email" />
+            <input name="password" type="password" placeholder="password" />
+            <input class="button block green" href="#" id="login" onclick="submit" type="submit" value="Login" style="width:100%;"/>
+            </form>
+        </div>
+        
+       
+        
+        
+        
+    </div>
+
+</div>
+</body>
+</html>    
